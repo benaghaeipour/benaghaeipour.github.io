@@ -2,8 +2,10 @@ angular.module('app', [
     'ngRoute'
 ])
 
-.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
+.config(['$routeProvider', '$httpProvider', '$locationProvider', function ($routeProvider, $httpProvider, $locationProvider) {
     'use strict';
+
+    $locationProvider.html5Mode(true);
 
     $httpProvider.defaults.headers.common['Accept'] = 'application/json';
     $httpProvider.defaults.headers.common['Content-Type'] = 'application/json';

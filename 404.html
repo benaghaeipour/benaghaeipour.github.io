@@ -1,7 +1,12 @@
 <script type="text/javascript">
 
     (function(){
-        window.location.replace(window.location.protocol + window.location.hostname + "?returnUrl='" + window.location.pathname + "'");
+        document.write(window.location.protocol + window.location.hostname + "/?returnUrl=" + window.location.pathname);
+
+        setInterval(function(){
+            //window.location.replace(window.location.protocol + window.location.hostname + "/?returnUrl=" + window.location.pathname);
+            window.location.href = window.location.protocol + window.location.hostname + "/?returnUrl=" + window.location.pathname
+        }, 2000);
     })();
 
 </script>

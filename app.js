@@ -33,15 +33,14 @@ angular.module('app', [
     'use strict';
 }])
 
-.controller('BlogController', ['$scope', '$routeParams', function ($scope, $route){
+.controller('BlogController', ['$scope', '$routeParams', function ($scope, $routeParams){
     'use strict';
 
-    $scope.blogId = $routeParmas.blogId || 0;
+    $scope.blogId = $routeParams.blogId || 0;
 }])
 
-.controller('ErrorController', ['$scope', '$routeParmas', function ($scope, $routeParmas){
+.controller('ErrorController', ['$scope', '$routeParams', function ($scope, $routeParams){
     'use strict';
 
-    $scope.errorNum = $routeParmas.errorNum || 404;
-
+    $scope.errorNum = $routeParams.errorNum || 404;
 }]);

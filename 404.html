@@ -1,11 +1,11 @@
 <script type="text/javascript">
 
     (function(){
-        document.write(window.location.protocol + window.location.hostname + "/?returnUrl=" + window.location.pathname);
+        document.write('Redirecting to: ' + window.location.host + "/#" + window.location.pathname);
 
         setInterval(function(){
-            //window.location.replace(window.location.protocol + window.location.hostname + "/?returnUrl=" + window.location.pathname);
-            window.location.href = window.location.protocol + window.location.hostname + "/?returnUrl=" + window.location.pathname
+            var initialPage = window.location.pathname;
+            window.location.replace('https://benjamin.aghaeipour.com/#' + initialPage);
         }, 2000);
     })();
 

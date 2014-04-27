@@ -11,8 +11,11 @@ angular.module('app', [
     $httpProvider.defaults.headers.common['Content-Type'] = 'application/json';
     $routeProvider
         .when('/', {
-            template : '<h1>Hello World</h1>',
-            controller : 'AppController'
+            redirectTo: '/blog'
+        })
+        .when('/about', {
+            template : '<h1>About Me</h1>',
+            controller : 'AboutController'
         })
         .when('/blog', {
             template : '<h1>Hello blog</h1>',
@@ -31,7 +34,7 @@ angular.module('app', [
         });
 }])
 
-.controller('AppController', ['$scope', function ($scope){
+.controller('AboutController', ['$scope', function ($scope){
     'use strict';
 }])
 

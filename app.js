@@ -17,23 +17,31 @@ angular.module('app', [
             controller : 'BlogController'
         })
         .when('/blog/:blogId', {
-            template : '<h1>Hello blog</h1>',
+            template : '<h1>Hello blog {{ blogId }}</h1>',
             controller : 'BlogController'
         })
+        .when('/error/:errorNum', {
+            template: '<h1>{{ errorNum }}</h1>',
+            controller : 'ErrorController'
+        })
         .otherwise({
-            template: '<h1>404</h1>'
+            redirectTo: '/error/404'
         });
 }])
 
 .controller('AppController', ['$scope', function ($scope){
     'use strict';
-
-    debugger;
-
 }])
-.controller('BlogController', ['$scope', '$route', function ($scope, $route){
+
+.controller('BlogController', ['$scope', '$routeParams', function ($scope, $route){
     'use strict';
 
-    debugger;
+    $scope.blogId = $routeParmas.blogId || 0;
+}])
+
+.controller('ErrorController', ['$scope', '$routeParmas', function ($scope, $routeParmas){
+    'use strict';
+
+    $scope.errorNum = $routeParmas.errorNum || 404;
 
 }]);

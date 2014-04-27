@@ -1,9 +1,7 @@
 <script type="text/javascript">
 
     (function(){
-        alert(location.hostname + "?returnUrl=" + location.pathname);
-        window.location.replace(location.hostname + "?returnUrl=" + location.pathname);
-
+        window.location.replace(location.protocol + location.hostname + "?returnUrl=" + location.pathname);
     })();
 
 </script>
